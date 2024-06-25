@@ -86,7 +86,7 @@ def update_status(bookingnum, status):
         # Find the row with the matching booking number
         all_records = sheet.get_all_records()
         for record in all_records:
-            if record['Booking number'] == str(bookingnum):
+            if record['Booking number'] == int(bookingnum):
                 row = all_records.index(record) + 2  # Adjust for 1-based indexing and header row
                 sheet.update_cell(row, 8, status)  # Update status in column H (8th column)
                 return True
