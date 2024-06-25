@@ -129,7 +129,6 @@ if choice == "Create Booking":
     # User details input
     name = st.text_input("Name")
     phone = st.text_input("Phone Number")
-    phone = int(phone)
     email = st.text_input("Email")
 
     # Fee for booking
