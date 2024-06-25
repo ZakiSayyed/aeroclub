@@ -128,7 +128,7 @@ if choice == "Create Booking":
     selected_time = str(st.time_input("Select a time for the booking"))
     # User details input
     name = st.text_input("Name")
-    phone = st.text_input("Phone Number")
+    phone = st.number_input("Phone Number")
     email = st.text_input("Email")
 
     # Fee for booking
@@ -137,10 +137,10 @@ if choice == "Create Booking":
     if st.button("Confirm Booking"):
         if name and phone and email:
             # Generate PDF
-            booking_num = random.randint(1000, 9999)
+            booking_num = int(random.randint(1000, 9999))
             status = 'open'
             pdf_file = generate_pdf(name, phone, email, selected_date, selected_time, fee, booking_num,status)
-            add_booking(name, int(phone), email, selected_date, selected_time, fee, int(booking_num), status)
+            add_booking(name, phone, email, selected_date, selected_time, fee, booking_num, status)
             # Download button for PDF
             with open(pdf_file, "rb") as f:
                 st.download_button(label="Download Invoice", data=f, file_name=pdf_file, mime="application/pdf")
