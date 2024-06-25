@@ -276,15 +276,15 @@ elif choice == "Booking Details":
         if booking_num and phone_num:
             booking_details = check_booking_details(booking_num, phone_num)
             if booking_details:
-                st.write("Booking Details:")
-                st.write(f"Name: {booking_details['Name']}")
-                st.write(f"Phone Number: {booking_details['Phone number']}")
-                st.write(f"Email: {booking_details['Email']}")
-                st.write(f"Booking Date: {booking_details['Booking date']}")
-                st.write(f"Booking Time: {booking_details['Booking time']}")
-                st.write(f"Fee: ${booking_details['Fee']}")
-                st.write(f"Booking Number: {booking_details['Booking number']}")
-                st.write(f"Status: {booking_details['Status']}")
+                with st.expander(f"{booking_details['Name']}"):
+                    st.write(f"Name: {booking_details['Name']}")
+                    st.write(f"Phone Number: {booking_details['Phone number']}")
+                    st.write(f"Email: {booking_details['Email']}")
+                    st.write(f"Booking Date: {booking_details['Booking date']}")
+                    st.write(f"Booking Time: {booking_details['Booking time']}")
+                    st.write(f"Fee: ${booking_details['Fee']}")
+                    st.write(f"Booking Number: {booking_details['Booking number']}")
+                    st.write(f"Status: {booking_details['Status']}")
             else:
                 st.error("Booking not found")
         else:
