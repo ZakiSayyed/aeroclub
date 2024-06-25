@@ -128,7 +128,8 @@ if choice == "Create Booking":
     selected_time = str(st.time_input("Select a time for the booking"))
     # User details input
     name = st.text_input("Name")
-    phone = int(st.text_input("Phone Number"))
+    phone = st.text_input("Phone Number")
+    phone = int(phone)
     email = st.text_input("Email")
 
     # Fee for booking
