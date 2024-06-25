@@ -257,6 +257,8 @@ if choice == "Create Booking":
                             st.download_button(label="Download Invoice", data=f, file_name=pdf_file,
                                                mime="application/pdf")
                         st.success("Booking confirmed! Your invoice is ready for download.")
+                        st.balloons()
+                        time.sleep(5)
                     else:
                         st.error("Failed to add booking")
                 else:
